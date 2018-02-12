@@ -1,1 +1,9 @@
 C:\Projekt\WinForms\HouseProject\HouseProject\bin\Debug\HouseProject.exe.config
+C:\Projekt\WinForms\HouseProject\HouseProject\bin\Debug\HouseProject.exe
+C:\Projekt\WinForms\HouseProject\HouseProject\bin\Debug\HouseProject.pdb
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.csprojResolveAssemblyReference.cache
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.Form1.resources
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.Properties.Resources.resources
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.csproj.GenerateResource.Cache
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.exe
+C:\Projekt\WinForms\HouseProject\HouseProject\obj\Debug\HouseProject.pdb

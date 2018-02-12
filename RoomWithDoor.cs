@@ -15,6 +15,6 @@ namespace HouseProject
 
         public string DoorDescription { get; private set; }
             
-        public Location DoorLoacation { get; set; }
+        public Location DoorLocation { get; set; }
     }
 }

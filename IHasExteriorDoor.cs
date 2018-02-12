@@ -9,6 +9,6 @@ namespace HouseProject
     interface IHasExteriorDoor
     {
         string DoorDescription{ get; }
-        Location DoorLoacation { get; set; }
+        Location DoorLocation { get; set; }
     }
 }
