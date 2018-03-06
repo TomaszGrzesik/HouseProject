@@ -1,8 +1,8 @@
 ﻿namespace HouseProject
 {
-    class RoomWithDoor : Room, IHasExteriorDoor
+    class RoomWithDoor : RoomWithHidingPlace, IHasExteriorDoor
     {
-        public RoomWithDoor(string name, string decoration, string doorDescription) : base(name, decoration)
+        public RoomWithDoor(string name, string decoration, string hidingPlace, string doorDescription) : base(name, decoration, hidingPlace)
         {
             DoorDescription = doorDescription;
         }

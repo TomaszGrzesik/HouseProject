@@ -5,22 +5,33 @@ namespace HouseProject
 {
     public partial class Form1 : Form
     {
+        int Moves;
+
         Location currentLocation;
 
         RoomWithDoor livingRoom;
         Room diningRoom;
+        Room stairs;
         RoomWithDoor kitchen;
+        RoomWithHidingPlace hallway;
+        RoomWithHidingPlace bathroom;
+        RoomWithHidingPlace masterBedroom;
+        RoomWithHidingPlace secondBedroom;
 
         OutsideWithDoor frontYard;
         OutsideWithDoor backYard;
-        Outside garden;
+        OutsideWithHidingPlace garden;
+        OutsideWithHidingPlace driveway;
 
+        Opponent opponent;
 
         public Form1()
         {
             InitializeComponent();
             CreateObjects();
             MoveToNewLocation(livingRoom);
+            opponent = new Opponent(frontYard);
+            ResetGame(false);
         }
 
         private void CreateObjects()
@@ -29,10 +40,11 @@ namespace HouseProject
             diningRoom = new Room("Dinning room", "Crystal chandelier");
             kitchen = new RoomWithDoor("Kitchen", "steel cutlery", "steel door");
 
-            garden = new Outside("Garden", false);
+
+            garden = new OutsideWithHidingPlace("Garden", false);
             frontYard = new OutsideWithDoor("Front yard", false, "Wooden door");
             backYard = new OutsideWithDoor("Back yard", true, "steel door");
-
+ 
             diningRoom.Exits = new Location[] {livingRoom, kitchen };
             livingRoom.Exits = new Location[] { diningRoom};
             kitchen.Exits = new Location[] { diningRoom};
@@ -51,19 +63,31 @@ namespace HouseProject
        
         private void MoveToNewLocation(Location newLocation)
         {
+            Moves++;
             currentLocation = newLocation;
+            RedrawForm();
+        }
+
+        private void RedrawForm()
+        {
             exits.Items.Clear();
             for (int i = 0; i < currentLocation.Exits.Length; i++)
                 exits.Items.Add(currentLocation.Exits[i].Name);
             exits.SelectedIndex = 0;
+            description.Text = currentLocation.Description + "\r\n(step number " + Moves + ")";
 
-            description.Text = currentLocation.Description;
-
+            if (currentLocation is IHidingPlace)
+            {
+                IHidingPlace hidingPlace = currentLocation as IHidingPlace;
+                check.Text = "Check" + hidingPlace.HidingPlace;
+                check.Visible = true;
+            }
+            else
+                check.Visible = false;
             if (currentLocation is IHasExteriorDoor)
                 goThroughTheDoor.Visible = true;
             else
                 goThroughTheDoor.Visible = false;
-
         }
 
         private void goThroughTheDoor_Click(object sender, EventArgs e)
