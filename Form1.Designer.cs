@@ -33,7 +33,7 @@
             this.goHere = new System.Windows.Forms.Button();
             this.goThroughTheDoor = new System.Windows.Forms.Button();
             this.check = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.hide = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // description
@@ -82,22 +82,24 @@
             this.check.TabIndex = 5;
             this.check.Text = "Check!";
             this.check.UseVisualStyleBackColor = true;
+            this.check.Click += new System.EventHandler(this.check_Click);
             // 
-            // button1
+            // hide
             // 
-            this.button1.Location = new System.Drawing.Point(12, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Hide";
-            this.button1.UseVisualStyleBackColor = true;
+            this.hide.Location = new System.Drawing.Point(12, 259);
+            this.hide.Name = "hide";
+            this.hide.Size = new System.Drawing.Size(260, 23);
+            this.hide.TabIndex = 6;
+            this.hide.Text = "Hide";
+            this.hide.UseVisualStyleBackColor = true;
+            this.hide.Click += new System.EventHandler(this.hide_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 290);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hide);
             this.Controls.Add(this.check);
             this.Controls.Add(this.goThroughTheDoor);
             this.Controls.Add(this.goHere);
@@ -118,7 +120,7 @@
         private System.Windows.Forms.Button goHere;
         private System.Windows.Forms.Button goThroughTheDoor;
         private System.Windows.Forms.Button check;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button hide;
     }
 }
 
